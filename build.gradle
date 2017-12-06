@@ -1,0 +1,57 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.9.RELEASE'
+	}
+	repositories {
+		maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.mumu.jxls.demo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+	maven {
+		url "http://dl.bintray.com/cuba-platform/main"
+	}
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter')
+	compile files("libs/aspose-cells-17.10.jar")
+
+	// https://mvnrepository.com/artifact/org.apache.poi/poi
+	//compile group: 'org.apache.poi', name: 'poi', version: '3.17'
+	// https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad
+	//compile group: 'org.apache.poi', name: 'poi-scratchpad', version: '3.17'
+	// https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+	// https://mvnrepository.com/artifact/org.apache.poi/poi-examples
+	//compile group: 'org.apache.poi', name: 'poi-examples', version: '3.17'
+	// https://mvnrepository.com/artifact/org.xhtmlrenderer/flying-saucer-pdf
+	//compile group: 'org.xhtmlrenderer', name: 'flying-saucer-pdf', version: '9.1.9'
+	// https://mvnrepository.com/artifact/org.jsoup/jsoup
+	//compile group: 'org.jsoup', name: 'jsoup', version: '1.11.2'
+
+	// https://mvnrepository.com/artifact/com.itextpdf/itextpdf
+	compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.12'
+	// https://mvnrepository.com/artifact/com.itextpdf/itext-asian
+	compile group: 'com.itextpdf', name: 'itext-asian', version: '5.2.0'
+
+	compile 'com.haulmont.yarg:yarg:2.0.1'
+
+	// https://mvnrepository.com/artifact/com.artofsolving/jodconverter-maven-plugin
+	compile group: 'com.artofsolving', name: 'jodconverter-maven-plugin', version: '2.2.1'
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}

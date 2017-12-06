@@ -1,0 +1,13 @@
+package com.aspose.cells;
+
+class zoq
+{
+  int a;
+  int b;
+}
+
+
+/* Location:              /media/peter/Data/gitworkspace/github/jxls_demo/libs/aspose-cells-17.10.jar!/com/aspose/cells/zoq.class
+ * Java compiler version: 6 (50.0)
+ * JD-Core Version:       0.7.1
+ */
